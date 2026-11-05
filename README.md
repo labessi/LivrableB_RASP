@@ -4,10 +4,10 @@ Communication série et contrôle PWM entre deux Raspberry Pi Pico
 Un Pico (Pico 1) fixe un rapport cyclique PWM et l'envoie par UART à un second Pico (Pico 2). Le Pico 2 mesure le signal avec son ADC, renvoie la mesure par UART, et les deux cartes calculent et affichent l'écart.
 
 ## Fichiers
-
-| `trame.py` | Encodage/décodage des trames UART 
-| `pico1_emetteur.py` | PWM, envoie la consigne, reçoit la mesure, affiche l'écart 
-| `pico2_recepteur.py` | Reçoit la consigne, lit l'ADC , renvoie la mesure
+|---|---|
+| `trame.py` | Encodage/décodage des trames UART |
+| `pico1_emetteur.py` | PWM, envoie la consigne, reçoit la mesure, affiche l'écart |
+| `pico2_recepteur.py` | Reçoit la consigne, lit l'ADC , renvoie la mesure|
 
 ## Câblage 
 | Pico 1 | Pico 2 | Rôle |
