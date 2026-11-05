@@ -4,23 +4,17 @@ Fonctions communes d'encodage/décodage des trames envoyées par UART
 entre les deux Pico.
 
 Format : "<préfixe>:<valeur>\n"
-  - préfixe "C" = consigne (envoyée par Pico 1)
-  - préfixe "M" = mesure   (renvoyée par Pico 2)
+  -  "C" = consigne 
+  -  "M" = mesure   
 
-Ex :
-    encoder("C", 48000)  -> "C:48000\n"
-    decoder("C:48000\n") -> ("C", 48000)
-
-Ce module est partagé par pico1_emetteur.py et pico2_recepteur.py pour
-éviter de dupliquer la logique des deux côtés.
+Ce module est partagé par pico1_emetteur.py et pico2_recepteur.py.
 """
 
 
 def encoder(prefixe: str, valeur: int) -> str:
     """
     Construit une trame texte à partir d'un préfixe et
-    d'une valeur entière. Retourne une chaîne
-    prête à être envoyée par uart.write().
+    d'une valeur entière. Retourne une chaîne.
     """
     if prefixe not in ("C", "M"):
         raise ValueError("Préfixe de trame invalide : {}".format(prefixe))
